@@ -21,6 +21,15 @@ public class SuperArray {
         return true;
     }
     else return false;
+  }
 
+  public String get(int index) {
+    return data[index];
+  }
+
+  public String set(int index, String element) {
+    String replaced = get(index);
+    data[index] = element;
+    return replaced;
   }
 }
