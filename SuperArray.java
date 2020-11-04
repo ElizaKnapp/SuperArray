@@ -77,7 +77,7 @@ public class SuperArray {
   }
 
   public void add(int index, String element) {
-    String[] holder = new String[data.length];
+    String[] holder = new String[data.length + 1];
     for (int i = 0; i < index; i++) {
       holder[i] = data[i];
     }
@@ -86,5 +86,18 @@ public class SuperArray {
       holder[i] = data[i - 1];
     }
     data = holder;
+  }
+
+  public String remove(int index) {
+    String removed = data[index];
+    String[] holder = new String[data.length - 1];
+    for (int i = 0; i < index; i++) {
+      holder[i] = data[i];
+    }
+    for (int i = index; i < data.length - 1; i++) {
+      holder[i] = data[i + 1];
+    }
+    data = holder;
+    return removed;
   }
 }
