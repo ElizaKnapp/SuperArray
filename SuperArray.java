@@ -45,7 +45,7 @@ public class SuperArray {
   }
 
   public boolean isEmpty() {
-    return size() == 0;
+    return size == 0;
   }
 
   public void clear() {
@@ -55,15 +55,15 @@ public class SuperArray {
 
   public String toString() {
     String ans = "[";
-    for (int i = 0; i < size() - 1; i++) {
+    for (int i = 0; i < size - 1; i++) {
       ans += get(i) + ", ";
     }
-    ans = ans + get(size() - 1) + "]";
+    ans = ans + get(size - 1) + "]";
     return ans;
   }
 
   public boolean contains(String s) {
-    for (int i = 0; i < size(); i++) {
+    for (int i = 0; i < size; i++) {
       if (data[i] == s) {
         return true;
       }
@@ -86,6 +86,7 @@ public class SuperArray {
       holder[i] = data[i - 1];
     }
     data = holder;
+    size++;
   }
 
   public String remove(int index) {
@@ -98,6 +99,29 @@ public class SuperArray {
       holder[i] = data[i + 1];
     }
     data = holder;
+    size--;
     return removed;
+  }
+
+  public int indexOf(String s) {
+    if (contains(s)) {
+      int index = 0;
+      for (int i = 0; i < size; i++) {
+        if (data[i] == s) {
+          index = i;
+          i = size;
+        }
+      }
+      return index;
+    }
+    else return -1;
+  }
+
+  public String[] toArray() {
+    String[] ans = new String[size];
+    for (int i = 0; i < size; i++) {
+      ans[i] = data[i];
+    }
+    return ans;
   }
 }
