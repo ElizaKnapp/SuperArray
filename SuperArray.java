@@ -20,6 +20,11 @@ public class SuperArray {
         data[size()] = element;
         return true;
     }
+    else if (size() >= data.length){
+      resize();
+      add(element);
+      return true;
+    }
     else return false;
   }
 
@@ -31,5 +36,10 @@ public class SuperArray {
     String replaced = get(index);
     data[index] = element;
     return replaced;
+  }
+
+  private void resize() {
+    String[] newArray = new String[data.length + 10];
+    data = newArray;
   }
 }
