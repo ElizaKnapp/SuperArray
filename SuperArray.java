@@ -40,6 +40,9 @@ public class SuperArray {
 
   private void resize() {
     String[] newArray = new String[data.length + 10];
+    for (int i = 0; i < data.length; i++) {
+      newArray[i] = data[i];
+    }
     data = newArray;
   }
 }
