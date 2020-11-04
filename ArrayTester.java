@@ -13,6 +13,15 @@ public class ArrayTester {
         System.out.println(t1.size());
         System.out.println(t1.get(0));
         System.out.println(t1.get(13));
-  }
+
+        //mr k tester ex
+          SuperArray words = new SuperArray();
+          words.add("kani");
+          words.add("uni");
+          words.add("ebi");
+          for(int i = 0; i < words.size(); i++){
+            System.out.println( words.get(i) );
+          }
+    }
 
 }
