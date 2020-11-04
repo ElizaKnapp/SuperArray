@@ -72,7 +72,19 @@ public class SuperArray {
   }
 
   public SuperArray(int initialCapacity) {
-    data = new String[initialCapcity];
+    data = new String[initialCapacity];
     size = 0;
+  }
+
+  public void add(int index, String element) {
+    String[] holder = new String[data.length];
+    for (int i = 0; i < index; i++) {
+      holder[i] = data[i];
+    }
+    holder[index] = element;
+    for (int i = index + 1; i <= data.length; i++) {
+      holder[i] = data[i - 1];
+    }
+    data = holder;
   }
 }
