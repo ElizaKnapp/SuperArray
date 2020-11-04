@@ -77,6 +77,9 @@ public class SuperArray {
   }
 
   public void add(int index, String element) {
+    if (size == data.length) {
+      resize();
+    }
     String[] holder = new String[data.length + 1];
     for (int i = 0; i < index; i++) {
       holder[i] = data[i];
