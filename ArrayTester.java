@@ -23,7 +23,6 @@ public class ArrayTester {
           for(int i = 0; i < words.size(); i++){
             System.out.println( words.get(i) );
           }
-    */
     SuperArray t1 = new SuperArray();
     System.out.println(t1.size());
     System.out.println(t1.add("hey there"));
@@ -42,7 +41,26 @@ public class ArrayTester {
     System.out.println(t1.indexOf("hello"));
 
     System.out.println(t1.toArray().length);
-    
+
+        */
+
+        //Tests starting from toString
+        SuperArray t1 = new SuperArray();
+        for (int i = 0; i <= 20; i++) {
+          t1.add("test" + i);
+        }
+        System.out.println(t1);
+
+        for (int i = 0; i <= 20;i++) {
+          t1.add(i, "hah!");
+        }
+        System.out.println(t1);
+
+        for (int i = 0; i <= 20; i++) {
+          t1.remove(i);
+        }
+        System.out.println(t1);
+
     }
 
 }
