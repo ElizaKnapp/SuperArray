@@ -49,6 +49,9 @@ public class SuperArray {
   }
 
   public String toString() {
+    if (size == 0) {
+      return "[]";
+    }
     String ans = "[";
     for (int i = 0; i < size - 1; i++) {
       ans += get(i) + ", ";
@@ -59,7 +62,7 @@ public class SuperArray {
 
   public boolean contains(String s) {
     for (int i = 0; i < size; i++) {
-      if (data[i] == s) {
+      if (data[i].equals(s)) {
         return true;
       }
     }
@@ -89,15 +92,11 @@ public class SuperArray {
 
   public String remove(int index) {
     String removed = data[index];
-    String[] holder = new String[data.length - 1];
-    for (int i = 0; i < index; i++) {
-      holder[i] = data[i];
+    for (int i = index; i < size - 1;i++) {
+      data[i] = data[i + 1];
     }
-    for (int i = index; i < data.length - 1; i++) {
-      holder[i] = data[i + 1];
-    }
-    data = holder;
-    size--;
+    size --;
+    data[size] = null;
     return removed;
   }
 
@@ -105,7 +104,7 @@ public class SuperArray {
     if (contains(s)) {
       int index = 0;
       for (int i = 0; i < size; i++) {
-        if (data[i] == s) {
+        if (data[i].equals(s)) {
           index = i;
           i = size;
         }
