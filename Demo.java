@@ -18,4 +18,19 @@ public class Demo {
     return intersection;
   }
 
+  public static SuperArray zip(SuperArray a, SuperArray b) {
+    SuperArray zipped = new SuperArray();
+    if (a.size() < b.size()) {
+      for (int i = 0; i < a.size(); i++) {
+        zipped.add(a.get(i));
+        zipped.add(b.get(i));
+      }
+      for (int i = a.size(); i < b.size(); i++) {
+        zipped.add(b.get(i));
+      }
+    }
+    else zip(b, a);
+    return zipped;
+  }
+
 }

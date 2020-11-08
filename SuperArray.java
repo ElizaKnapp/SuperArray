@@ -121,4 +121,25 @@ public class SuperArray {
     }
     return ans;
   }
+
+  public int lastIndexOf(String value){
+    if (contains(value)) {
+      int index = 0;
+      for (int i = size - 1; i >= 0; i--) {
+        if (data[i].equals(value)) {
+          index = i;
+          i = -1;
+        }
+      }
+      return index;
+    }
+    else return -1;
+  }
+
+  public boolean equals(SuperArray other) {
+    for (int i = 0; i < size; i++) {
+      if (!data[i].equals(other.data[i])) return false;
+    }
+    return true;
+  }
 }
