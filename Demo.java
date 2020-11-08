@@ -29,7 +29,15 @@ public class Demo {
         zipped.add(b.get(i));
       }
     }
-    else zip(b, a);
+    else {
+      for (int i = 0; i < b.size(); i++) {
+        zipped.add(a.get(i));
+        zipped.add(b.get(i));
+      }
+      for (int i = b.size(); i < a.size(); i++) {
+        zipped.add(a.get(i));
+      }
+    }
     return zipped;
   }
 
