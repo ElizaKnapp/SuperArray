@@ -16,7 +16,7 @@ public class ErrorTester {
       t2.get(7);
     } catch (IndexOutOfBoundsException e) {
       e.printStackTrace();
-      System.out.println("GET index error");
+      System.out.println("GET index out of bounds");
     }
 
     try {
@@ -24,7 +24,7 @@ public class ErrorTester {
       t2.get(-5);
     } catch (IndexOutOfBoundsException e) {
       e.printStackTrace();
-      System.out.println("GET index error");
+      System.out.println("GET index negative");
     }
 
     //set
@@ -33,7 +33,7 @@ public class ErrorTester {
       t3.set(7, "bobble");
     } catch (IndexOutOfBoundsException e) {
       e.printStackTrace();
-      System.out.println("SET index error");
+      System.out.println("SET index out of bounds");
     }
 
     try {
@@ -41,7 +41,25 @@ public class ErrorTester {
       t3.set(-5, "bobble");
     } catch (IndexOutOfBoundsException e) {
       e.printStackTrace();
-      System.out.println("SET index error");
+      System.out.println("SET index negative");
+    }
+
+    //add
+    try {
+      SuperArray t4 = new SuperArray(5);
+      t4.add(6, "bobble");
+      System.out.println(t4);
+    } catch (IndexOutOfBoundsException e) {
+      e.printStackTrace();
+      System.out.println("ADD index out of bounds");
+    }
+
+    try {
+      SuperArray t4 = new SuperArray(5);
+      t4.add(-5, "bobble");
+    } catch (IndexOutOfBoundsException e) {
+      e.printStackTrace();
+      System.out.println("ADD index negative");
     }
 
   }
