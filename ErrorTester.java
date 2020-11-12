@@ -7,7 +7,25 @@ public class ErrorTester {
       SuperArray t1 = new SuperArray(-4);
     } catch (IllegalArgumentException e){
       e.printStackTrace();
-      System.out.println("above should be an error");
+      System.out.println("above should be an illegal argument error");
     }
+
+    //get
+    try {
+      SuperArray t2 = new SuperArray(5);
+      t2.get(7);
+    } catch (IndexOutOfBoundsException e) {
+      e.printStackTrace();
+      System.out.println("above should be an index error");
+    }
+
+    try {
+      SuperArray t2 = new SuperArray(5);
+      t2.get(-5);
+    } catch (IndexOutOfBoundsException e) {
+      e.printStackTrace();
+      System.out.println("above should be an index error");
+    }
+
   }
 }
