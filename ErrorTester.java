@@ -47,7 +47,10 @@ public class ErrorTester {
     //add
     try {
       SuperArray t4 = new SuperArray(5);
-      t4.add(6, "bobble");
+      for (int i = 0; i < 5; i++) {
+        t4.add("bobble");
+      }
+      t4.add(5, "bobble");
       System.out.println(t4);
     } catch (IndexOutOfBoundsException e) {
       e.printStackTrace();
