@@ -59,10 +59,35 @@ public class ErrorTester {
 
     try {
       SuperArray t4 = new SuperArray(5);
+      t4.add(4, "bobble");
+    } catch (IndexOutOfBoundsException e) {
+      e.printStackTrace();
+      System.out.println("ADD index out of bounds");
+    }
+
+    try {
+      SuperArray t4 = new SuperArray(5);
       t4.add(-5, "bobble");
     } catch (IndexOutOfBoundsException e) {
       e.printStackTrace();
       System.out.println("ADD index negative");
+    }
+
+    //remove
+    try {
+      SuperArray t5 = new SuperArray(5);
+      t5.set(7, "bobble");
+    } catch (IndexOutOfBoundsException e) {
+      e.printStackTrace();
+      System.out.println("REMOVE index out of bounds");
+    }
+
+    try {
+      SuperArray t5 = new SuperArray(5);
+      t5.set(-5, "bobble");
+    } catch (IndexOutOfBoundsException e) {
+      e.printStackTrace();
+      System.out.println("REMOVE index negative");
     }
 
   }
