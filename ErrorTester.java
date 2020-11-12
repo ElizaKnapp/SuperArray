@@ -7,7 +7,7 @@ public class ErrorTester {
       SuperArray t1 = new SuperArray(-4);
     } catch (IllegalArgumentException e){
       e.printStackTrace();
-      System.out.println("above should be an illegal argument error");
+      System.out.println("CONSTRUCTOR illegal argument error");
     }
 
     //get
@@ -16,7 +16,7 @@ public class ErrorTester {
       t2.get(7);
     } catch (IndexOutOfBoundsException e) {
       e.printStackTrace();
-      System.out.println("above should be an index error");
+      System.out.println("GET index error");
     }
 
     try {
@@ -24,7 +24,24 @@ public class ErrorTester {
       t2.get(-5);
     } catch (IndexOutOfBoundsException e) {
       e.printStackTrace();
-      System.out.println("above should be an index error");
+      System.out.println("GET index error");
+    }
+
+    //set
+    try {
+      SuperArray t3 = new SuperArray(5);
+      t3.set(7, "bobble");
+    } catch (IndexOutOfBoundsException e) {
+      e.printStackTrace();
+      System.out.println("SET index error");
+    }
+
+    try {
+      SuperArray t3 = new SuperArray(5);
+      t3.set(-5, "bobble");
+    } catch (IndexOutOfBoundsException e) {
+      e.printStackTrace();
+      System.out.println("SET index error");
     }
 
   }
